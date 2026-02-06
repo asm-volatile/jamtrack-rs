@@ -238,8 +238,11 @@ fn test_byte_track_with_yolox() {
         0.6, /* high_thresh */
         false, /* use_ciou */
         0.5,  /* high_conf_match_min_iou */
+        1.0,  /* high_conf_match_iou_weight */
         0.7, /* low_conf_match_min_iou */
+        1.0,  /* low_conf_match_iou_weight */
         0.7, /* track_activation_min_iou */
+        1.0,  /* track_activation_iou_weight */
         1. / 20., /* kalman_std_weight_pos */
         1. / 160., /* kalman_std_weight_vel */
         1. / 20., /* kalman_std_weight_position_meas */
