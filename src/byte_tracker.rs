@@ -42,6 +42,13 @@ pub struct ByteTracker {
     removed_stracks: Vec<STrack>,
 }
 
+#[derive(Clone, Debug, Default, PartialEq)]
+pub struct TrackBufferSizes {
+    pub lost: usize,
+    pub removed: usize,
+    pub tracked: usize,
+}
+
 impl ByteTracker {
     pub fn new(
         frame_rate: usize,
@@ -95,6 +102,14 @@ impl ByteTracker {
             tracked_stracks: Vec::new(),
             lost_stracks: Vec::new(),
             removed_stracks: Vec::new(),
+        }
+    }
+
+    pub fn track_buffer_sizes(&self) -> TrackBufferSizes {
+        TrackBufferSizes {
+            lost: self.lost_stracks.len(),
+            removed: self.removed_stracks.len(),
+            tracked: self.tracked_stracks.len(),
         }
     }
 
