@@ -341,7 +341,7 @@ impl ByteTracker {
         // From the lost tracks, remove any that became tracked
         let subtrack_stracks =
             Self::sub_stracks(&original_lost_stracks, &self.tracked_stracks);
-        // Add any newly lost tracks tracks that are still lost
+        // Add any newly lost tracks
         let joint_stracks =
             Self::joint_stracks(&subtrack_stracks, &current_lost_stracks);
         // Remove tracks marked for removal from lost tracks
